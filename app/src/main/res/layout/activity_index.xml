@@ -75,7 +75,6 @@
                 android:orientation="vertical"
                 android:layout_marginBottom="32dp">
 
-                <!-- Header del post -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -104,13 +103,11 @@
                         android:textColor="#777777"
                         android:textSize="13sp" />
 
-                    <!-- Espacio flexible que empuja el icono a la derecha -->
                     <View
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
 
-                    <!-- Ícono de guardar (alineado a la derecha) -->
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
@@ -120,7 +117,6 @@
                         app:tint="#000000" />
                 </LinearLayout>
 
-                <!-- Descripción -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -130,7 +126,6 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp" />
 
-                <!-- Imagen del post -->
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
@@ -138,7 +133,6 @@
                     android:src="@drawable/sample_post1"
                     android:background="@android:color/darker_gray" />
 
-                <!-- Descripción extendida -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -147,7 +141,6 @@
                     android:textSize="13sp"
                     android:layout_marginTop="8dp" />
 
-                <!-- Likes y comentarios -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -189,6 +182,99 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <!-- 🔹 Historial de búsqueda -->
+    <LinearLayout
+        android:id="@+id/layoutHistorial"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recientes"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/historial1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sonsito"
+            android:textColor="#555555"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/historial2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="arriba la fcfm"
+            android:textColor="#555555"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/historial3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="como programar en c++"
+            android:textColor="#555555"/>
+    </LinearLayout>
+
+    <!-- 🔹 Resultados de búsqueda -->
+    <LinearLayout
+        android:id="@+id/layoutResultados"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADRIANA - COORDI"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hace 1 mes vi a este sonsito por redes y me enamoré."
+            android:textColor="#555555"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sample_post2"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="-- No hay más publicaciones --"
+            android:gravity="center"
+            android:textColor="#999999"
+            android:layout_marginTop="12dp"/>
+    </LinearLayout>
 
     <!-- 🔹 Barra inferior -->
     <LinearLayout

@@ -27,7 +27,7 @@
         <!-- 🔐 Formulario de inicio de sesión -->
         <activity
             android:name=".ui.theme.LoginFormActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.SWAP" />
 
         <!-- 📰 Pantalla principal -->
