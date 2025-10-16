@@ -15,7 +15,7 @@
         android:id="@+id/tvTitleLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="84dp"
         android:text="@string/iniciar_sesion"
         android:textColor="#000000"
         android:textSize="32sp"
