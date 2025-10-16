@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.swap">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="SWAP"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SWAP">
+
+        <!-- 🟢 Pantalla de inicio -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SWAP">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 🔐 Formulario de inicio de sesión -->
+        <activity
+            android:name=".ui.theme.LoginFormActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SWAP" />
+
+        <!-- 📰 Pantalla principal -->
+        <activity
+            android:name=".ui.theme.IndexActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SWAP" />
+
+        <!-- 🧾 Registro -->
+        <activity
+            android:name=".ui.theme.RegisterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SWAP" />
+
+        <activity
+            android:name=".ui.theme.Register2Activity"
+            android:exported="false"
+            android:theme="@style/Theme.SWAP" />
+
+        <!-- 🧭 Pantalla intermedia o de presentación -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SWAP" />
+
+    </application>
+</manifest>

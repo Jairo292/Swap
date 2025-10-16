@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SWAP</string>
+    <string name="iniciar_sesion">INICIAR SESIÓN</string>
+    <string name="correo_electronico">Correo electrónico</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="siguiente">Siguiente</string>
+</resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".LoginFormActivity">
+
+    <!-- 🔹 Título -->
+    <TextView
+        android:id="@+id/tvTitleLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iniciar_sesion"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="100dp" />
+
+    <!-- 🔹 Campo de correo electrónico -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/correo_electronico"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="#33B5E5"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="40dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="textEmailAddress"
+            android:textColor="#000000"
+            android:hint="@string/correo_electronico" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- 🔹 Campo de contraseña con ojito -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/contrasena"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="#33B5E5"
+        app:endIconMode="password_toggle"
+        app:layout_constraintTop_toBottomOf="@id/emailLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="textPassword"
+            android:textColor="#000000"
+            android:hint="@string/contrasena" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- 🔹 Botón “Siguiente” con fondo redondeado -->
+    <Button
+        android:id="@+id/btnSiguiente"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="@string/siguiente"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintTop_toBottomOf="@id/passwordLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="40dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

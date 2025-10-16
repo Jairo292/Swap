@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.SWAP" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Colores del tema -->
+        <item name="colorPrimary">#33A0DC</item>
+        <item name="colorPrimaryDark">#1976D2</item>
+        <item name="colorAccent">#03DAC5</item>
+        <item name="android:statusBarColor">#33A0DC</item>
+        <item name="android:windowBackground">#FFFFFF</item>
+    </style>
+</resources>
