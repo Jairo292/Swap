@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.theme.CrearPublicacionActivity">
+
+    <!-- 🔙 Flecha de regreso -->
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        android:contentDescription="Regresar"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- 🔹 Texto “Borradores” -->
+    <TextView
+        android:id="@+id/tvBorradores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Borradores"
+        android:textColor="#757575"
+        android:textSize="15sp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="@id/ivBack"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 🔹 Foto de perfil -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgPerfilPost"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_default_avatar"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/ivBack"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        tools:src="@drawable/sample_post1"/>
+
+    <!-- 🔹 Agregar título -->
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar Título"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintTop_toBottomOf="@id/imgPerfilPost"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etTituloPost"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Agrega un título..."
+        android:background="@drawable/edittext_profile"
+        android:paddingHorizontal="12dp"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
+
+    <!-- 🔹 Descripción -->
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descripción"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintTop_toBottomOf="@id/etTituloPost"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etDescripcionPost"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:hint="Comenta algo nuevo..."
+        android:background="@drawable/edittext_profile"
+        android:gravity="top|start"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@id/tvDescripcion" />
+
+    <!-- 🔹 Botón agregar imagen -->
+    <ImageButton
+        android:id="@+id/btnAgregarImagen"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_gallery"
+        android:background="@android:color/transparent"
+        android:contentDescription="Agregar imagen"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/etDescripcionPost"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- 🔹 Botón Publicar -->
+    <Button
+        android:id="@+id/btnPublicar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Publicar"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:background="@drawable/rounded_button"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/btnAgregarImagen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

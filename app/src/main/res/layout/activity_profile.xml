@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.theme.PerfilActivity">
+
+    <!-- 🔹 Barra superior -->
+    <LinearLayout
+        android:id="@+id/topBarProfile"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SWAP"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            android:textSize="26sp"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <!-- 🔹 Scroll principal -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/topBarProfile"
+        app:layout_constraintBottom_toTopOf="@id/bottomBarProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="12dp">
+
+            <!-- 🔸 Título PERFIL y Ver favoritos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PERFIL"
+                    android:textStyle="bold"
+                    android:textSize="34sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif-black" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tvVerFavoritos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ver favoritos"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#1E88E5" />
+            </LinearLayout>
+
+            <!-- 🔸 Imagen de perfil -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgPerfil"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_default_avatar"
+                tools:src="@drawable/sample_post1" />
+
+            <TextView
+                android:id="@+id/tvEditar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Editar"
+                android:textColor="#1E88E5"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+
+            <!-- 🔸 Nombre de usuario -->
+            <TextView
+                android:id="@+id/tvUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jairo-FCFM"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:background="@drawable/rounded_chip"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp"
+                android:layout_marginTop="6dp"
+                tools:text="Jairo-FCFM" />
+
+            <!-- 🔸 Campos de nombre y apellido -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/etNombre"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:hint="Nombre"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:paddingHorizontal="12dp"
+                    android:background="@drawable/edittext_profile"
+                    tools:text="Jairo" />
+
+                <Space
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etApellido"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:hint="Apellido"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:paddingHorizontal="12dp"
+                    android:background="@drawable/edittext_profile"
+                    tools:text="Morales Arguello" />
+            </LinearLayout>
+
+            <!-- 🔸 Campo correo -->
+            <EditText
+                android:id="@+id/etCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Correo electrónico"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:paddingHorizontal="12dp"
+                android:background="@drawable/edittext_profile"
+                android:layout_marginTop="12dp"
+                tools:text="jairo@gmail.com" />
+
+            <!-- 🔸 Cambiar contraseña -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Olvidaste la contraseña?"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvCambiarContrasena"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Cambiar"
+                    android:textColor="#1E88E5"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- 🔸 Botón Guardar -->
+            <Button
+                android:id="@+id/btnGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_button"
+                android:text="Guardar"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 🔹 Barra inferior -->
+    <LinearLayout
+        android:id="@+id/bottomBarProfile"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingHorizontal="32dp"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/casa1"
+            android:contentDescription="Inicio" />
+
+        <ImageView
+            android:id="@+id/ivAdd"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginHorizontal="60dp"
+            android:src="@drawable/mas1"
+            android:contentDescription="Agregar publicación" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_default_avatar"
+            android:contentDescription="Perfil" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
