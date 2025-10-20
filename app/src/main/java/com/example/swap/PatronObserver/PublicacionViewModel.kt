@@ -9,21 +9,7 @@ import com.example.swap.models.Publicacion
 import com.example.swap.repository.PublicacionRepository
 import kotlinx.coroutines.launch
 
-/**
- * PATRÓN OBSERVER (implementado con LiveData)
- *
- * Propósito: Establecer una relación de dependencia uno-a-muchos entre objetos,
- * de manera que cuando un objeto cambie de estado, todos sus dependientes
- * sean notificados automáticamente.
- *
- * Uso en el proyecto: Cuando los datos cambian (nuevas publicaciones, likes, etc.),
- * todas las vistas que observan estos datos se actualizan automáticamente.
- *
- * Ventajas:
- * - Las Activities/Fragments no necesitan pedir datos constantemente
- * - Actualización automática de la UI cuando cambian los datos
- * - Respeta el ciclo de vida de Android (evita memory leaks)
- */
+
 class PublicacionViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = PublicacionRepository(application)
@@ -123,8 +109,8 @@ class PublicacionViewModel(application: Application) : AndroidViewModel(applicat
         val publicacionesActuales = _publicaciones.value ?: return
 
         val publicacionesActualizadas = publicacionesActuales.map { pub ->
-            if (pub.id == publicacionId) {
-                pub.copy(votosAFavor = pub.votosAFavor + 1)
+            if (pub.idPublicacion == publicacionId) {
+                pub.copy(totalLikes = pub.totalLikes + 1)
             } else {
                 pub
             }
@@ -146,48 +132,3 @@ class PublicacionViewModel(application: Application) : AndroidViewModel(applicat
     }
 }
 
-/**
- * EJEMPLO DE USO en una Activity:
- *
- * class IndexActivity : AppCompatActivity() {
- *
- *     private val viewModel: PublicacionViewModel by viewModels()
- *
- *     override fun onCreate(savedInstanceState: Bundle?) {
- *         super.onCreate(savedInstanceState)
- *         setContentView(R.layout.activity_index)
- *
- *         // OBSERVAR los cambios en las publicaciones
- *         viewModel.publicaciones.observe(this) { publicaciones ->
- *             // Este código se ejecuta automáticamente cuando cambian los datos
- *             actualizarUI(publicaciones)
- *         }
- *
- *         // OBSERVAR el estado de carga
- *         viewModel.estadoCarga.observe(this) { estado ->
- *             when (estado) {
- *                 EstadoCarga.CARGANDO -> mostrarLoading()
- *                 EstadoCarga.EXITOSO -> ocultarLoading()
- *                 EstadoCarga.ERROR -> mostrarError()
- *             }
- *         }
- *
- *         // OBSERVAR mensajes de error
- *         viewModel.mensajeError.observe(this) { mensaje ->
- *             mensaje?.let {
- *                 Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
- *             }
- *         }
- *
- *         // Cargar datos iniciales
- *         viewModel.cargarPublicaciones()
- *     }
- *
- *     private fun actualizarUI(publicaciones: List<Publicacion>) {
- *         // Actualizar RecyclerView o UI
- *     }
- * }
- *
- * VENTAJA CLAVE: La Activity no necesita "jalar" los datos constantemente.
- * Los datos "empujan" automáticamente las actualizaciones a la UI cuando cambian.
- */
