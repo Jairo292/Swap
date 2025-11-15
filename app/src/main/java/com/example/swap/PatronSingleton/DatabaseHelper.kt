@@ -4,15 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-/**
- * PATRÓN SINGLETON
- *
- * Propósito: Garantizar que solo exista una instancia de la base de datos
- * en toda la aplicación, evitando múltiples conexiones.
- *
- * Uso en el proyecto: Gestión de la base de datos local SQLite para
- * funcionalidad offline (borradores, caché de publicaciones).
- */
+
 class DatabaseHelper private constructor(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 

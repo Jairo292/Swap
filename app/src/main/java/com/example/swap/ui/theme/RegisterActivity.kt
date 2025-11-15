@@ -21,7 +21,7 @@ class RegisterActivity : AppCompatActivity() {
         val etContrasena = findViewById<EditText>(R.id.etContrasena)
         val btnSiguiente = findViewById<Button>(R.id.btnSiguiente)
 
-        // 👁️ Alternar visibilidad de la contraseña
+        // 👁 Alternar visibilidad de la contraseña
         etContrasena.setOnTouchListener { _, event ->
             val drawableEnd = 2 // posición del ícono a la derecha
             if (event.action == MotionEvent.ACTION_UP) {
@@ -47,28 +47,28 @@ class RegisterActivity : AppCompatActivity() {
             false
         }
 
-        // ✨ Animación: línea azul
+        //  Animación: línea azul
         val linea = findViewById<View>(R.id.titleUnderline)
         val animLinea = AnimationUtils.loadAnimation(this, R.anim.anim_linea_extender)
         linea.postDelayed({
             linea.startAnimation(animLinea)
         }, 200)
 
-        // ✨ Animación: título
+        //  Animación: título
         val tvTitleRegister = findViewById<View>(R.id.tvTitleRegister)
         val animTitle = AnimationUtils.loadAnimation(this, R.anim.anim_fade_in_left_title)
         tvTitleRegister.startAnimation(animTitle)
 
-        // ✨ Animación: campos
+        //  Animación: campos
         val fieldsContainer = findViewById<View>(R.id.fieldsContainer)
         val animFields = AnimationUtils.loadAnimation(this, R.anim.anim_fade_in_up_fields)
         fieldsContainer.startAnimation(animFields)
 
-        // ✨ Animación: botón
+        //  Animación: botón
         val animButton = AnimationUtils.loadAnimation(this, R.anim.anim_fade_in_up_button)
         btnSiguiente.startAnimation(animButton)
 
-        // 🚀 Navegación a la siguiente ventana (Register2Activity)
+        //  Navegación a la siguiente ventana (Register2Activity)
         btnSiguiente.setOnClickListener {
             val intent = Intent(this, Register2Activity::class.java)
             startActivity(intent)

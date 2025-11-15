@@ -59,9 +59,7 @@ class CrearPublicacionActivity : AppCompatActivity() {
         }
 
         // TODO:
-        // 1. Get the selected image URI (needs implementation in openImageChooser and onActivityResult)
-        // 2. Upload image and post data to your backend/database.
-        // 3. Navigate back to the main feed after success.
+
 
         // Placeholder for successful post simulation
         Toast.makeText(this, "Publicación creada: $title", Toast.LENGTH_LONG).show()
